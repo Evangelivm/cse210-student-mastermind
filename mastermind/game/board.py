@@ -21,6 +21,8 @@ class Board:
         self.number_2 = []
         self.answer_1 = ["-","-","-","-"]
         self.answer_2 = ["-","-","-","-"]
+        self.question_1 = ["*","*","*",'*']
+        self.question_2 = ["*","*","*",'*']
     def players(self,names):
         self.player.append(names)
     def apply(self, move, player):
@@ -38,7 +40,7 @@ class Board:
         elif self.answer_1 != self.number_1:
             for n in range (4):
                 if self.answer_1[n] in self.number_1:
-                    if self.answer_1[n] == self.number_1:
+                    if self.answer_1[n] == self.number_1[n]:
                         self.question_1[n] = "o"
                     else:
                         self.question_1[n] = 'x'
@@ -56,8 +58,6 @@ class Board:
                     self.question_2[n] = "*"
             n = n + 1
     def to_string(self):
-        self.question_1 = ["*","*","*",'*']
-        self.question_2 = ["*","*","*",'*']
         board = f"\n--------------------\
 \nPlayer {self.player [0]}: {self.answer_1[0]}{self.answer_1[1]}{self.answer_1[2]}{self.answer_1[3]}, {self.question_1[0]}{self.question_1[1]}{self.question_1[2]}{self.question_1[3]}\
 \nPlayer {self.player [1]}: {self.answer_2[0]}{self.answer_2[1]}{self.answer_2[2]}{self.answer_2[3]}, {self.question_2[0]}{self.question_2[1]}{self.question_2[2]}{self.question_2[3]}\
