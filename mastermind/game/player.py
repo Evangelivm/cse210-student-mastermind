@@ -15,7 +15,7 @@ class Player:
             self (Player): an instance of Player.
         """
         self._name = name
-        self._move = None
+        self._move = []
         
     def get_move(self):
         """Returns the player's last move (an instance of Move). If the player 
@@ -41,4 +41,4 @@ class Player:
             self (Player): an instance of Player.
             move (Move): an instance of Move
         """
-        self._move = move
+        self._move = str(move)

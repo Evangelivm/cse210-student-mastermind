@@ -14,7 +14,7 @@ class Roster:
         Args:
             self (Roster): an instance of Roster.
         """
-        self.current = -1
+        self.current = 0
         self.players = []
         
     def add_player(self, player):
@@ -44,4 +44,7 @@ class Roster:
         Args:
             self (Roster): An instance of Roster.
         """
-        self.current = (self.current + 1) % len(self.players)
+        if self.current == 0:
+            self.current = self.current + 1
+        elif self.current == 1:
+            self.current = self.current - 1

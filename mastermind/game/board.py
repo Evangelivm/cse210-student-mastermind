@@ -23,8 +23,13 @@ class Board:
         self.answer_2 = ["-","-","-","-"]
     def players(self,names):
         self.player.append(names)
-    def apply(self):
-        pass
+    def apply(self, move, player):
+        if player == self.player[0]:
+            list_player = list(str(move))
+            self.answer_1 = list_player 
+        else:
+            list_player = list(str(move))
+            self.answer_2 = list_player 
     def is_empty(self):
         if self.answer_1 == self.number_1:
             return False
@@ -54,12 +59,12 @@ class Board:
         self.question_1 = ["*","*","*",'*']
         self.question_2 = ["*","*","*",'*']
         board = f"\n--------------------\
-\nPlayer {self.player [0]}: ----, {self.question_1[0]}{self.question_1[1]}{self.question_1[2]}{self.question_1[3]}\
-\nPlayer {self.player [1]}: ----, {self.question_2[0]}{self.question_2[1]}{self.question_2[2]}{self.question_2[3]}\
+\nPlayer {self.player [0]}: {self.answer_1[0]}{self.answer_1[1]}{self.answer_1[2]}{self.answer_1[3]}, {self.question_1[0]}{self.question_1[1]}{self.question_1[2]}{self.question_1[3]}\
+\nPlayer {self.player [1]}: {self.answer_2[0]}{self.answer_2[1]}{self.answer_2[2]}{self.answer_2[3]}, {self.question_2[0]}{self.question_2[1]}{self.question_2[2]}{self.question_2[3]}\
 \n--------------------"
         return board
     def random(self):
-        self.number_one = str(random. randint(1000,9999))
-        self.number_1.append(self.number_one)
-        self.number_two = str(random. randint(1000,9999))
-        self.number_2.append(self.number_two)
+        self.number_one = list(str(random. randint(1000,9999)))
+        self.number_1 = self.number_one 
+        self.number_two = list(str(random. randint(1000,9999)))
+        self.number_2 = self.number_two

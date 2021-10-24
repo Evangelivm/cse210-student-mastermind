@@ -33,7 +33,7 @@ class Console:
         Returns:
             integer: The user's input as an integer.
         """
-        return str(input(prompt))
+        return input(prompt)
         
     def write(self, text):
         """Displays the given text on the screen. 
