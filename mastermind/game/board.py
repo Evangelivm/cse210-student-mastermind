@@ -15,7 +15,6 @@ class Board:
         roster (Roster): An instance of the class of objects known as Roster.
     """
     def __init__(self):
-        self.called_piles = []
         self.player = []
         self.number_1 = []
         self.number_2 = []
@@ -37,7 +36,7 @@ class Board:
             return False
         elif self.answer_2 == self.number_2:
             return False
-        elif self.answer_1 != self.number_1:
+        if self.answer_1 != self.number_1:
             for n in range (4):
                 if self.answer_1[n] in self.number_1:
                     if self.answer_1[n] == self.number_1[n]:
@@ -47,10 +46,10 @@ class Board:
                 else:
                     self.question_1[n] = "*"
             n = n + 1
-        elif self.answer_2 != self.number_2:
+        if self.answer_2 != self.number_2:
             for n in range (4):
                 if self.answer_2[n] in self.number_2:
-                    if self.answer_2[n] == self.number_2:
+                    if self.answer_2[n] == self.number_2[n]:
                         self.question_2[n] = "o"
                     else:
                         self.question_2[n] = 'x'

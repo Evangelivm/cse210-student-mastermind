@@ -99,7 +99,7 @@ class Director:
         if result == False:
             winner = self._roster.get_current()
             name = winner.get_name()
-            print(f"\n{name} won!")
+            print(f"\n{name} won!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             time.sleep(0.5)
             self._console.winner()
             self._keep_playing = False
