@@ -51,9 +51,10 @@ class Director:
         """
         for n in range(2):
             name = self._console.read(f"Enter a name for player {n + 1}: ")
+            self._board.players(name)
             player = Player(name)
             self._roster.add_player(player)
-    
+            
     def _get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
         that means getting the move from the current player.
@@ -62,12 +63,13 @@ class Director:
             self (Director): An instance of Director.
         """
         # display the game board
+        self._board.random()
         board = self._board.to_string()
         self._console.write(board)
         # get next player's move
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
-        pile = self._console.read_number("What pile to remove from? ")
+        pile = self._console.read_number("What is your guess? ")
         stones = self._console.read_number("How many stones to remove? ")
         move = Move(stones, pile)
         player.set_move(move)
