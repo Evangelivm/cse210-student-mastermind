@@ -16,7 +16,7 @@ class Director:
         board (Hunter): An instance of the class of objects known as Board.
         console (Console): An instance of the class of objects known as Console.
         keep_playing (boolean): Whether or not the game can continue.
-        move (Rabbit): An instance of the class of objects known as Move.
+        move (move): An instance of the class of objects known as Move.
         roster (Roster): An instance of the class of objects known as Roster.
     """
 
@@ -67,15 +67,14 @@ class Director:
             self (Director): An instance of Director.
         """
         # display the game board
-
         board = self._board.to_string()
         self._console.write(board)
         # get next player's move
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
         time.sleep(0.5)
-        pile = self._console.read_number("What is your guess? ")
-        player.set_move(pile)
+        number = self._console.read_number("What is your guess? ")
+        player.set_move(number)
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 

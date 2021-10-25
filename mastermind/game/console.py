@@ -45,6 +45,11 @@ class Console:
         print(text)
     
     def intro(self):
+        """Displays the introduction.
+        
+        Args:
+            self (Director): an instance of Director.
+        """
         introduction = f"███╗░░░███╗░█████╗░░██████╗████████╗███████╗██████╗░███╗░░░███╗██╗███╗░░██╗██████╗░\
 \n████╗░████║██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗░████║██║████╗░██║██╔══██╗\
 \n██╔████╔██║███████║╚█████╗░░░░██║░░░█████╗░░██████╔╝██╔████╔██║██║██╔██╗██║██║░░██║\
@@ -54,6 +59,11 @@ class Console:
         return print(introduction)
     
     def winner(self):
+        """Displays the winner text.
+        
+        Args:
+            self (Director): an instance of Director.
+        """
         winning = f"███████████████████████████████████████████\
 \n█▄─█▀▀▀█─▄█▄─▄█▄─▀█▄─▄█▄─▀█▄─▄█▄─▄▄─█▄─▄▄▀█\
 \n██─█─█─█─███─███─█▄▀─███─█▄▀─███─▄█▀██─▄─▄█\
